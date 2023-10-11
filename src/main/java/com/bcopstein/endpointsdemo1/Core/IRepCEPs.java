@@ -1,5 +1,9 @@
 package com.bcopstein.endpointsdemo1.Core;
 
-public class IRepCEPs {
-    
+import java.util.List;
+
+public interface IRepCEPs {
+    List<String> listaCEPS();
+
+    Boolean validaCEP();
 }
