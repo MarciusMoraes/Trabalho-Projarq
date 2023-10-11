@@ -1,5 +1,9 @@
 package com.bcopstein.endpointsdemo1.Core;
 
-public class IRepOrcamento {
+import java.util.List;
+
+public interface IRepOrcamento {
+    List<Orcamento> getAll();
+
     
 }
