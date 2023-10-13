@@ -1,5 +1,7 @@
 package com.bcopstein.endpointsdemo1.Persistence;
 
-public class CEPRepository {
+import com.bcopstein.endpointsdemo1.Core.IRepCEPS;
+
+public class CEPRepository implements IRepCEPS {
     
 }

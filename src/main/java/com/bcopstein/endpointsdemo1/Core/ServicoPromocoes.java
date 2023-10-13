@@ -1,7 +1,7 @@
 package com.bcopstein.endpointsdemo1.Core;
 
 
-//Factory
+//Strategy  
 
 public class ServicoPromocoes {
     private double taxaPromocional;

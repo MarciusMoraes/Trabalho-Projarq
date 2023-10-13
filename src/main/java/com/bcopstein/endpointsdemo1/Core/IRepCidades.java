@@ -5,9 +5,7 @@ import java.util.List;
 import com.bcopstein.endpointsdemo1.Core.Cidade;
 
 public interface IRepCidades{
-    List<Cidade> getAll();
-
-    Cidade getByName(String nome);
-
-    double getCustoCidade(String nome);
+    List<Cidade> todas();
+    Cidade get(long id);
+    Cidade get(String nome);
 }
