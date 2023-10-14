@@ -1,5 +1,56 @@
 package com.bcopstein.endpointsdemo1.Core;
 
-public class ServicoOrcamentos {
+import com.bcopstein.endpointsdemo1.Persistence.BudgetRepository;
+import com.bcopstein.endpointsdemo1.Persistence.CityRepository;
+
+@Service
+public class ServicoOrcamento {
     
+    private RepositorioDeCidades repositorioDeCidades;
+    private RepositorioDeOrcamentos repositorioDeOrcamentos;
+
+    @Autowired
+    public ServicoOrcamento(CityRepository repositorioDeCidades,
+            BudgetRepository repositorioDeOrcamentos) {
+        this.repositorioDeCidades = repositorioDeCidades;
+        this.repositorioDeOrcamentos = repositorioDeOrcamentos;
+    }
+
+    public Orcamento calculaOrcamento(SolicitaCustoDTO solCusto) {
+        // Recupera cidades
+        try {
+            var consultaOrigem = servicoCEP.pesquisaCEP(solCusto.cepOrigem());
+            var consultaDestino = servicoCEP.pesquisaCEP(solCusto.cepDestino());
+            // Se um CEP é inválido, retorna null
+            if (consultaOrigem == null || consultaDestino == null) {
+                return null;
+            }
+            Cidade origem = repositorioDeCidades.get(consultaOrigem.getLocalidade());
+            Cidade destino = repositorioDeCidades.get(consultaDestino.getLocalidade());
+            // Se alguma cidade não é atendida, retorna null
+            if (origem == null || destino == null) {
+                return null;
+            }
+            // Calcula o orcamento
+            long id = 1; // Arrumar na próxima versão
+            LocalDateTime data = LocalDateTime.now();
+            int peso = solCusto.peso();
+            double custoBasico = origem.getCustoBasico() + destino.getCustoBasico();
+            double custoAdicional = 0; // Ainda não calcula
+            double imposto = custoBasico * 0.05; // Calculo básico
+            double desconto = 0.0; // Ainda não calcula
+            double custoFinal = custoBasico + custoAdicional + imposto - desconto;
+            int diasUteisEntrega = 5; // Ainda não calcula
+            Orcamento orcamento = new Orcamento(id, data, origem, destino, peso, custoBasico, custoAdicional, imposto, desconto, custoFinal, diasUteisEntrega);
+            repositorioDeOrcamentos.cadastra(orcamento);
+            return orcamento;
+        } catch (Exception e) {
+            // Se der problema de comunicação, retorna null
+            return null;
+        }
+    }
+
+    public List<Orcamento> deUmaData(int dia, int mes, int ano) {
+        return repositorioDeOrcamentos.deUmaData(dia, mes, ano);
+    }
 }

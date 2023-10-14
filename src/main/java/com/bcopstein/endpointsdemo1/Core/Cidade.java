@@ -1,29 +1,47 @@
 package com.bcopstein.endpointsdemo1.Core;
 
 public class Cidade {
+    private long id;
     private String nome;
-    private  double custo;
+    private double custoBasico;
 
-    public Cidade(String nome, double custo){
-        this.nome= nome;
-        this.custo= custo;
+    public Cidade(long id, String nome,double custoBasico) {
+        this.id = id;
+        this.nome = nome;
+        this.custoBasico = custoBasico;
     }
 
-    public void SetNome(String nome){
-        this.nome= nome;
+    public Cidade(){
     }
 
-    public void SetCusto(double custo){
-        this.custo= custo;
+    public long getId() {
+        return id;
     }
 
-    public String GetNome(){
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
         return nome;
     }
 
-    public double GetCusto(){
-        return custo;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    
+    public double getCustoBasico(){
+        return this.custoBasico;
+    } 
+
+    public void setCustoBasico(double custoBasico){
+        this.custoBasico = custoBasico;
+    }
+
+    @Override
+    public String toString() {
+        return "Cidade [id=" + id + ", nome=" + nome + "custoBasico=" + custoBasico + "]";
+    }
+
 }
+
