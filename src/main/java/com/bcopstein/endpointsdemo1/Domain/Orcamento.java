@@ -1,4 +1,6 @@
-package com.bcopstein.endpointsdemo1.Core;
+package com.bcopstein.endpointsdemo1.Domain;
+
+import java.time.LocalDateTime;
 
 public class Orcamento {
     private long id;
@@ -29,7 +31,7 @@ public class Orcamento {
         this.diasUteisParaEntrega = diasUteisParaEntrega;
     }
 
-    public Orcamento(){
+    public Orcamento() {
 
     }
 
@@ -113,11 +115,11 @@ public class Orcamento {
         this.valorFinal = valorFinal;
     }
 
-    public int getDiasUteisParaEntrega(){
+    public int getDiasUteisParaEntrega() {
         return diasUteisParaEntrega;
     }
 
-    public void setDiasUteisParaEntrega(int diasUteisParaEntrega){
+    public void setDiasUteisParaEntrega(int diasUteisParaEntrega) {
         this.diasUteisParaEntrega = diasUteisParaEntrega;
     }
 
@@ -125,7 +127,7 @@ public class Orcamento {
     public String toString() {
         return "Orcamento [id=" + id + ", data=" + data + ", cidadeOrigem=" + cidadeOrigem + ", cidadeDestino="
                 + cidadeDestino + ", peso=" + peso + ", custoBasico=" + custoBasico + ", custoAdicional="
-                + custoAdicional + ", impostos=" + impostos + ", desconto=" + desconto + ", valorFinal=" + valorFinal 
+                + custoAdicional + ", impostos=" + impostos + ", desconto=" + desconto + ", valorFinal=" + valorFinal
                 + ", diasUteisParaEntrega=" + diasUteisParaEntrega + "]";
     }
 }

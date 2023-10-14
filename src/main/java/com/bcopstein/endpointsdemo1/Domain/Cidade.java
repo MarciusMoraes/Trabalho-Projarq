@@ -1,17 +1,17 @@
-package com.bcopstein.endpointsdemo1.Core;
+package com.bcopstein.endpointsdemo1.Domain;
 
 public class Cidade {
     private long id;
     private String nome;
     private double custoBasico;
 
-    public Cidade(long id, String nome,double custoBasico) {
+    public Cidade(long id, String nome, double custoBasico) {
         this.id = id;
         this.nome = nome;
         this.custoBasico = custoBasico;
     }
 
-    public Cidade(){
+    public Cidade() {
     }
 
     public long getId() {
@@ -30,11 +30,11 @@ public class Cidade {
         this.nome = nome;
     }
 
-    public double getCustoBasico(){
+    public double getCustoBasico() {
         return this.custoBasico;
-    } 
+    }
 
-    public void setCustoBasico(double custoBasico){
+    public void setCustoBasico(double custoBasico) {
         this.custoBasico = custoBasico;
     }
 
@@ -44,4 +44,3 @@ public class Cidade {
     }
 
 }
-

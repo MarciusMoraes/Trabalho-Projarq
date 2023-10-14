@@ -1,20 +1,47 @@
-package com.bcopstein.endpointsdemo1.Core;
+package com.bcopstein.endpointsdemo1.Domain;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.bcopstein.endpointsdemo1.Persistence.BudgetRepository;
 import com.bcopstein.endpointsdemo1.Persistence.CityRepository;
 
 @Service
-public class ServicoOrcamento {
+public class ServicoOrcamentos {
     private ServicoCidades servicoCidade;
     private ServicoPromocoes servicoPromocoes;
-    private RepositorioDeCidades repositorioDeCidades;
-    private RepositorioDeOrcamentos repositorioDeOrcamentos;
+    private BudgetRepository repositorioDeOrcamentos;
 
     @Autowired
-    public ServicoOrcamento(CityRepository repositorioDeCidades,
-            BudgetRepository repositorioDeOrcamentos) {
-        this.repositorioDeCidades = repositorioDeCidades;
+    public ServicoOrcamentos(BudgetRepository repositorioDeOrcamentos, ServicoCidades servicoCidade,
+            ServicoPromocoes servicoPromocoes) {
+        this.servicoCidade = servicoCidade;
+        this.servicoPromocoes = servicoPromocoes;
         this.repositorioDeOrcamentos = repositorioDeOrcamentos;
+    }
+
+    public Orcamento criaOrcamento(String origem, String destino, int peso) {
+        double valorFinal;
+
+        if (servicoCidade.CepAtendido(origem) && servicoCidade.CepAtendido(destino)){
+            if (origem.equals(destino)){
+
+            } else {
+                for(int i=0;i<peso;i++){
+                   if(i>3 && i<12){
+                        valorFinal += 10;
+                   }
+                   if(i>12){
+                        valorFinal += 15;
+                   }
+                }
+            }
+        }
+        
+        return 
     }
 
     public Orcamento calculaOrcamento(SolicitaCustoDTO solCusto) {
@@ -42,7 +69,8 @@ public class ServicoOrcamento {
             double desconto = 0.0; // Ainda não calcula
             double custoFinal = custoBasico + custoAdicional + imposto - desconto;
             int diasUteisEntrega = 5; // Ainda não calcula
-            Orcamento orcamento = new Orcamento(id, data, origem, destino, peso, custoBasico, custoAdicional, imposto, desconto, custoFinal, diasUteisEntrega);
+            Orcamento orcamento = new Orcamento(id, data, origem, destino, peso, custoBasico, custoAdicional, imposto,
+                    desconto, custoFinal, diasUteisEntrega);
             repositorioDeOrcamentos.cadastra(orcamento);
             return orcamento;
         } catch (Exception e) {
