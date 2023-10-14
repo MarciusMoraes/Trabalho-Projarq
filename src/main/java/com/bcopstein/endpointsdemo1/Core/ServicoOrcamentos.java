@@ -5,7 +5,8 @@ import com.bcopstein.endpointsdemo1.Persistence.CityRepository;
 
 @Service
 public class ServicoOrcamento {
-    
+    private ServicoCidades servicoCidade;
+    private ServicoPromocoes servicoPromocoes;
     private RepositorioDeCidades repositorioDeCidades;
     private RepositorioDeOrcamentos repositorioDeOrcamentos;
 

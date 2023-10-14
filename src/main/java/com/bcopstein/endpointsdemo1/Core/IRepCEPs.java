@@ -5,5 +5,5 @@ import java.util.List;
 public interface IRepCEPS {
     List<String> listaCEPS();
 
-    Boolean validaCEP();
+    Boolean validaCEP(String cep);
 }
