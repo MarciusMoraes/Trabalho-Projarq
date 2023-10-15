@@ -2,9 +2,12 @@ package com.bcopstein.endpointsdemo1.Domain;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.bcopstein.endpointsdemo1.Persistence.CEPRepository;
 import com.bcopstein.endpointsdemo1.Persistence.CityRepository;
 
+@Service
 public class ServicoCidades {
     private CityRepository repositorioDeCidades;
     private CEPRepository repositorioDeCEP;
