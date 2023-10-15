@@ -1,6 +1,6 @@
-package com.bcopstein.endpointsdemo1.Application;
+package com.example.demo.application;
 
-import com.bcopstein.endpointsdemo1.Domain.ServicoPromocoes;
+import com.example.demo.domain.ServicoPromocoes;
 
 public class PromoVigente_UC {
     private ServicoPromocoes promocao;

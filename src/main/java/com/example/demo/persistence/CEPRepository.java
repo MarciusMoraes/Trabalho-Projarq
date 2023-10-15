@@ -1,10 +1,10 @@
-package com.bcopstein.endpointsdemo1.Persistence;
+package com.example.demo.persistence;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.bcopstein.endpointsdemo1.Domain.IRepCEPs;
+import com.example.demo.domain.IRepCEPs;
 
 @Repository
 public class CEPRepository implements IRepCEPs {

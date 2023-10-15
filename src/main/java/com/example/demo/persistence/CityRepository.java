@@ -1,12 +1,12 @@
-package com.bcopstein.endpointsdemo1.Persistence;
+package com.example.demo.persistence;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.bcopstein.endpointsdemo1.Domain.Cidade;
-import com.bcopstein.endpointsdemo1.Domain.IRepCidades;
+import com.example.demo.domain.Cidade;
+import com.example.demo.domain.IRepCidades;
 
 @Repository
 public class CityRepository implements IRepCidades {

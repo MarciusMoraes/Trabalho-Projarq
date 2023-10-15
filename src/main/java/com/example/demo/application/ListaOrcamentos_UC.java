@@ -1,9 +1,9 @@
-package com.bcopstein.endpointsdemo1.Application;
+package com.example.demo.application;
 
 import org.springframework.stereotype.Component;
 
-import com.bcopstein.endpointsdemo1.Domain.Orcamento;
-import com.bcopstein.endpointsdemo1.Domain.ServicoOrcamentos;
+import com.example.demo.domain.Orcamento;
+import com.example.demo.domain.ServicoOrcamentos;
 
 import java.util.List;
 

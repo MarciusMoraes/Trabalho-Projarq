@@ -1,4 +1,4 @@
-package com.bcopstein.endpointsdemo1;
+package com.example.demo.service;
 
 import java.util.LinkedList;
 import java.util.List;

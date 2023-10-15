@@ -1,4 +1,4 @@
-package com.bcopstein.endpointsdemo1.Persistence;
+package com.example.demo.persistence;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.bcopstein.endpointsdemo1.Domain.IRepOrcamento;
-import com.bcopstein.endpointsdemo1.Domain.Orcamento;
+import com.example.demo.domain.IRepOrcamento;
+import com.example.demo.domain.Orcamento;
 
 @Repository
 public class BudgetRepository implements IRepOrcamento {

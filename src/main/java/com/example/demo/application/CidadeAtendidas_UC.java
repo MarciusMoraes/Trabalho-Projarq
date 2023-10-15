@@ -1,10 +1,10 @@
-package com.bcopstein.endpointsdemo1.Application;
+package com.example.demo.application;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.bcopstein.endpointsdemo1.Domain.ServicoCidades;
+import com.example.demo.domain.ServicoCidades;
 
 @Component
 public class CidadeAtendidas_UC {

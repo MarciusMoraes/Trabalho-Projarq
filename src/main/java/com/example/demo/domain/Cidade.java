@@ -1,4 +1,4 @@
-package com.bcopstein.endpointsdemo1.Domain;
+package com.example.demo.domain;
 
 public class Cidade {
     private long id;

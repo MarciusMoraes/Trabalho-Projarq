@@ -1,4 +1,4 @@
-package com.bcopstein.endpointsdemo1.Interface;
+package com.example.demo.Interface;
 
 import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bcopstein.endpointsdemo1.Application.CEPAtendido_UC;
-import com.bcopstein.endpointsdemo1.Application.CidadeAtendidas_UC;
-import com.bcopstein.endpointsdemo1.Application.CriaOrcamento_UC;
-import com.bcopstein.endpointsdemo1.Application.ListaOrcamentos_UC;
-import com.bcopstein.endpointsdemo1.Application.PromoVigente_UC;
-import com.bcopstein.endpointsdemo1.Domain.Orcamento;
+import com.example.demo.application.CEPAtendido_UC;
+import com.example.demo.application.CidadeAtendidas_UC;
+import com.example.demo.application.CriaOrcamento_UC;
+import com.example.demo.application.ListaOrcamentos_UC;
+import com.example.demo.application.PromoVigente_UC;
+import com.example.demo.domain.Orcamento;
 
 @RestController
 @RequestMapping("/CalculoFrete")
