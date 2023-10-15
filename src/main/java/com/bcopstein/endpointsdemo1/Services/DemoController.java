@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
+/* 
 @RestController
 @RequestMapping("/biblioteca")
 public class DemoController {
@@ -90,6 +92,7 @@ public class DemoController {
     public double mediaObrasAutor(@RequestParam(value = "autor") String autor) {
         return acervo.mediaObrasAutor(autor);
     }
+    */
     /*
      * 
      * 
@@ -124,4 +127,3 @@ public class DemoController {
      * }
      * 
      */
-}
