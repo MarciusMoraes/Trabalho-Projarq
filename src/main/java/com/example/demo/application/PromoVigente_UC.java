@@ -1,5 +1,7 @@
 package com.example.demo.application;
 
+import java.util.List;
+
 import com.example.demo.domain.ServicoPromocoes;
 
 public class PromoVigente_UC {
@@ -9,7 +11,7 @@ public class PromoVigente_UC {
         this.promocao = promocao;
     }
 
-    public ServicoPromocoes retornaPromocao() {
-        return promocao;
+    public List<String> retornaPromocao() {
+        return promocao.getListaDePromocoes();
     }
 }
