@@ -1,6 +1,6 @@
-package com.example.demo.Interface;
+package com.example.demo.interfaces;
 
-import org.hibernate.mapping.List;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -51,7 +51,7 @@ public class CalculoFreteController {
     @GetMapping("/promocoes")
     @CrossOrigin(origins = "*")
     public ResponseEntity<List<String>> Promocoes() {
-        List<String> promocoes = promoVigente_UC.retornaPromocao();
+        List<String> promocoes = (List<String>) promoVigente_UC.retornaPromocao();
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(promocoes);
