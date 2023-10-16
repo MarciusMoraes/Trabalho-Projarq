@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bcopstein.endpointsdemo1.Core.ServicoPromocoes;
 import com.example.demo.application.PromoVigente_UC;
 
 @RestController
@@ -24,8 +25,8 @@ public class PromoVigenteController {
 
     @GetMapping
     @CrossOrigin(origins = "*")
-    public ResponseEntity<List<String>> Promocoes() {
-        List<String> promocoes = (List<String>) promoVigente_UC.retornaPromocao();
+    public ResponseEntity<ServicoPromocoes> Promocoes() {
+        ServicoPromocoes promocoes = (ServicoPromocoes) promoVigente_UC.retornaPromocao();
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(promocoes);
